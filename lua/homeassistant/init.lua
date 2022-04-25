@@ -30,7 +30,7 @@ M.display_result = function(lines)
 end
 
 local function on_setup ()
-  vim.api.nvim_add_user_command("HARender", function(_)
+  vim.api.nvim_create_user_command("HARender", function(_)
     return M.display_result(M.template_from_buffer(vim.api.nvim_get_current_buf()))
   end, {
     -- complete = "buffer",
